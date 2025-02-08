@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pocketbase
+    env: docker
+    plan: free
+    autoDeploy: true
+    repo: https://github.com/YuKotabe/my-pocketbase-app
+    branch: main
+    rootDir: /
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PB_DATA
+        value: /app/pb_data
+      - key: PORT
+        value: 8080
