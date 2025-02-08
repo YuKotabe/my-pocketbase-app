@@ -1,4 +1,4 @@
-FROM golang:1.21  # ← ここがあるか確認！適切なバージョンかもチェック！
+FROM golang:latest
 WORKDIR /app
 COPY . .
 RUN go mod tidy
