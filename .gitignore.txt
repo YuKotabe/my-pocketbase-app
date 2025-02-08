@@ -1,0 +1,7 @@
+# PocketBase のデータフォルダ（アップしないほうがいい）
+pb_data/
+pb_public/
+pb_migrations/
+
+# Node.js などの依存関係（不要な場合）
+node_modules/
