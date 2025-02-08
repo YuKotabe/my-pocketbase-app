@@ -1,7 +1,17 @@
+# ベースイメージに Alpine Linux を使用
 FROM alpine:latest
 
-WORKDIR /app
-COPY . /app
-RUN apk add --no-cache go && go build -o pocketbase
+# 必要なパッケージをインストール（go、ビルドツール、必要なライブラリ）
+RUN apk add --no-cache go build-base git
 
-CMD ["./pocketbase", "serve", "--http", "0.0.0.0:8080"]
+# 作業ディレクトリを作成
+WORKDIR /app
+
+# 現在のディレクトリ（ローカル）から `/app` にすべてコピー
+COPY . .
+
+# Go で PocketBase をビルド
+RUN go build -o pocketbase
+
+# サーバーを起動
+CMD [ "./pocketbase", "serve", "--http=0.0.0.0:8080" ]
