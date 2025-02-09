@@ -1,0 +1,21 @@
+{
+  "collections": [
+    {
+      "name": "messages",
+      "schema": [
+        {
+          "name": "message",
+          "type": "String"
+        },
+        {
+          "name": "latitude",
+          "type": "Float"
+        },
+        {
+          "name": "longitude",
+          "type": "Float"
+        }
+      ]
+    }
+  ]
+}
